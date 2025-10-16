@@ -249,23 +249,9 @@ tab1, tab2, tab3 = st.tabs(["📊 Dashboard", "📅 Agenda Completa", "👥 Gest
 with tab1:
     # Primera fila: Métricas rápidas
     st.subheader("📈 Resumen del Día")
-    metric_cols = st.columns(4)
     
-    with metric_cols[0]:
-        confirmed_appointments = len([a for a in SAMPLE_DATA["appointments"] if a["status"] == "confirmed"])
-        st.metric("✅ Citas Confirmadas", confirmed_appointments)
     
-    with metric_cols[1]:
-        pending_tasks = len(SAMPLE_DATA["alerts"])
-        st.metric("📋 Tareas Pendientes", pending_tasks)
     
-    with metric_cols[2]:
-        total_revenue = sum(int(a["price"].replace("$", "").replace(".", "").split(",")[0]) 
-                          for a in SAMPLE_DATA["appointments"] if a["status"] == "confirmed")
-        st.metric("💰 Ingreso Estimado", f"${total_revenue:,}")
-    
-    with metric_cols[3]:
-        st.metric("⭐ Clientes Nuevos", 1)
     
     # Segunda fila: Contenido principal
     col1, col2, col3 = st.columns([1, 2, 1.2])

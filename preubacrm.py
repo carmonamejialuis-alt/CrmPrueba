@@ -238,22 +238,15 @@ with col1:
     st.markdown('<h1 class="main-header">Panel de <span class="gold-text">Artista</span></h1>', unsafe_allow_html=True)
     st.markdown('<p class="main-subheader">Bienvenido, aquí tienes un resumen actualizado de tu día</p>', unsafe_allow_html=True)
 
-with col2:
-    today = datetime.now().strftime("%d %b %Y")
-    st.metric("📅 Hoy", today)
-    st.metric("👥 Citas Hoy", len(SAMPLE_DATA["appointments"]))
+
 
 # Layout principal
 tab1, tab2, tab3 = st.tabs(["📊 Dashboard", "📅 Agenda Completa", "👥 Gestión de Clientes"])
 
 with tab1:
-    # Primera fila: Métricas rápidas
-    st.subheader("📈 Resumen del Día")
     
     
-    
-    
-    # Segunda fila: Contenido principal
+    # primera  fila: Contenido principal
     col1, col2, col3 = st.columns([1, 2, 1.2])
     
     # Columna 1: Alertas
